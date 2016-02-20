@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @actor.image.url(:medium) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @actor.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @actor.description %>
+</p>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>
