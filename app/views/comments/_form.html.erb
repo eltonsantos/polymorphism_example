@@ -1,10 +1,7 @@
-<%= simple_form_for(@comment) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for [commentable, Comment.new] do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :body %>
-    <%= f.association :commentable %>
+    <%= f.input :body, placehoulder: "Add comment" %>
   </div>
 
   <div class="form-actions">
