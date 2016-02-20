@@ -13,7 +13,14 @@
 </p>
 
 <%= render partial: 'comments/comments', locals: {commentable: @film} %>
-<%= render partial: 'comments/form', locals: {commentable: @film} %>
+
+<% if user_signed_in? %>
+	<%= render partial: 'comments/form', locals: {commentable: @film} %>
+<% else %>
+	<h3><%= link_to 'Log in', new_user_session_path %> for comment</h3>
+<% end %>
+
+<br />
 
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>
